@@ -50,22 +50,14 @@ Sistema completo para monitoramento de vagas de estacionamento usando ESP32, sen
 
 ##  Configuração
 
-### ESP32 (Wokwi)
-1. Copie o código do ESP32
-2. Configure as conexões:
-   - **Sensor ultrassônico**: Trig=5, Echo=19
-   - **LED RGB**: R=16, G=17, B=18
-   - **Buzzer**: Pino 21
-3. Execute a simulação
-
 ### Dashboard Python
 1. Instale as dependências:
-```bash
+```cmd
 pip install paho-mqtt
 ```
 
 2. Execute o dashboard:
-```bash
+```cmd
 python dashboard.py
 ```
 
@@ -96,29 +88,3 @@ O sistema monitora automaticamente:
 - Conexão WiFi do ESP32
 - Conexão MQTT do dashboard
 - Execução de comandos remotos
-
-##  Notas Técnicas
-
-- **Frequência PWM**: 5000Hz para LEDs e buzzer
-- **Resolução PWM**: 8 bits (0-255)
-- **Intervalo de medição**: 2 segundos
-- **Timeout do sensor**: 30ms
-- **LED RGB**: Configurado para cátodo comum (valores invertidos)
-
-##  Solução de Problemas
-
-### ESP32 não conecta ao MQTT
-- Verifique a conexão WiFi
-- Confirme se o broker está acessível
-
-### Dashboard não recebe mensagens
-- Verifique se ambos estão usando o mesmo broker
-- Confirme os nomes dos tópicos MQTT
-
-### LED não acende corretamente
-- Verifique se é LED de cátodo comum
-- Confirme as conexões dos pinos
-
-### Sensor ultrassônico com leituras erráticas
-- Verifique as conexões Trig e Echo
-- Evite obstáculos próximos ao sensor
